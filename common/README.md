@@ -1,6 +1,6 @@
-# Common library
+# Ape Commerce Common
 
-The common library is shared by API, Admin and Store projects.
+The common library is shared by API, Admin and Store apps.
 
 ## Setup
 
