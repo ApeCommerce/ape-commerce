@@ -8,7 +8,7 @@
     "build": "quasar build"
   },
   "engines": {
-    "node": "^18.6"
+    "node": "^16.20"
   },
   "dependencies": {
     "@quasar/extras": "^1.16",
