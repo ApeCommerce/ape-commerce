@@ -1,5 +1,5 @@
+import { Endpoint } from '@apecommerce/ape-common/endpoint';
 import { AppId } from '../../core/app';
-import { Endpoint } from '../../../framework/endpoint';
 import schema from '../../core/schema';
 
 export interface RequestPasswordlessAuthRequest {

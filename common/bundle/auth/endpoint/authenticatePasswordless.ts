@@ -1,26 +1,24 @@
-import { Endpoint } from '../../../framework/endpoint';
+import { Endpoint } from '@apecommerce/ape-common/endpoint';
 import schema from '../../core/schema';
 
-export interface ResetPasswordRequest {
+export interface AuthenticatePasswordlessRequest {
   token: string,
-  password: string,
 }
 
-export interface ResetPasswordReply {
+export interface AuthenticatePasswordlessReply {
   token: string,
 }
 
 const endpoint: Endpoint = {
-  path: '/auth/resetPassword',
+  path: '/auth/authenticatePasswordless',
   method: 'POST',
   forbidden: true,
   requestSchema: {
     type: 'object',
     additionalProperties: false,
-    required: ['token', 'password'],
+    required: ['token'],
     properties: {
       token: schema.token,
-      password: schema.password,
     },
   },
   replySchema: {

@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "target": "ES5",
-    "baseUrl": "src",
-    "outDir": "dist",
-    "strict": true
+    "baseUrl": ".",
+    "strict": true,
+    "esModuleInterop": true,
+    "declaration": true
   },
   "include": [
-    "src"
+    "**/*.ts"
   ]
 }

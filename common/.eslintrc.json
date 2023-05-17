@@ -14,9 +14,9 @@
   "plugins": [
     "import"
   ],
-  "rules": {
-    "import/no-cycle": [
-      "off"
-    ]
-  }
+  "ignorePatterns": [
+    "**/*.d.ts",
+    "**/*.js"
+  ],
+  "rules": {}
 }

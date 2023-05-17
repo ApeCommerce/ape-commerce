@@ -1,24 +1,26 @@
-import { Endpoint } from '../../../framework/endpoint';
+import { Endpoint } from '@apecommerce/ape-common/endpoint';
 import schema from '../../core/schema';
 
-export interface ValidateAccountRequest {
+export interface ResetPasswordRequest {
   token: string,
+  password: string,
 }
 
-export interface ValidateAccountReply {
+export interface ResetPasswordReply {
   token: string,
 }
 
 const endpoint: Endpoint = {
-  path: '/auth/validateAccount',
+  path: '/auth/resetPassword',
   method: 'POST',
   forbidden: true,
   requestSchema: {
     type: 'object',
     additionalProperties: false,
-    required: ['token'],
+    required: ['token', 'password'],
     properties: {
       token: schema.token,
+      password: schema.password,
     },
   },
   replySchema: {

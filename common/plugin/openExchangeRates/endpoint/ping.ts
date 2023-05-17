@@ -1,4 +1,4 @@
-import { Endpoint } from '../../../framework/endpoint';
+import { Endpoint } from '@apecommerce/ape-common/endpoint';
 
 const endpoint: Endpoint = {
   path: '/openExchangeRates/',

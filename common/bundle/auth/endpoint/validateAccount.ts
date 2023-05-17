@@ -1,16 +1,16 @@
-import { Endpoint } from '../../../framework/endpoint';
+import { Endpoint } from '@apecommerce/ape-common/endpoint';
 import schema from '../../core/schema';
 
-export interface RenewTokenRequest {
+export interface ValidateAccountRequest {
   token: string,
 }
 
-export interface RenewTokenReply {
+export interface ValidateAccountReply {
   token: string,
 }
 
 const endpoint: Endpoint = {
-  path: '/auth/renewToken',
+  path: '/auth/validateAccount',
   method: 'POST',
   forbidden: true,
   requestSchema: {

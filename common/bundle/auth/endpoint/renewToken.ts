@@ -1,16 +1,16 @@
-import { Endpoint } from '../../../framework/endpoint';
+import { Endpoint } from '@apecommerce/ape-common/endpoint';
 import schema from '../../core/schema';
 
-export interface AuthenticatePasswordlessRequest {
+export interface RenewTokenRequest {
   token: string,
 }
 
-export interface AuthenticatePasswordlessReply {
+export interface RenewTokenReply {
   token: string,
 }
 
 const endpoint: Endpoint = {
-  path: '/auth/authenticatePasswordless',
+  path: '/auth/renewToken',
   method: 'POST',
   forbidden: true,
   requestSchema: {

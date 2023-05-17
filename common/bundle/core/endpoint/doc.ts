@@ -1,4 +1,4 @@
-import { Endpoint } from '../../../framework/endpoint';
+import { Endpoint } from '@apecommerce/ape-common/endpoint';
 import schema from '../schema';
 
 const endpoint: Endpoint = {
@@ -27,7 +27,7 @@ const endpoint: Endpoint = {
     openapi: '3.0.0',
     info: {
       title: 'Ape Commerce API Documentation',
-      version: '0.0.0',
+      version: '1.0.0',
     },
     paths: {
       '/': {
