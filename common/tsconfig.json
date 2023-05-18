@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ES5",
     "baseUrl": ".",
+    "outDir": "dist",
     "strict": true,
     "esModuleInterop": true,
     "declaration": true
