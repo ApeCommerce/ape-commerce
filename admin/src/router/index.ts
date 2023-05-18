@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory, RouteMeta } from 'vue-router';
 import routes from 'router/routes';
 
 export const getMeta = (path: string) => {
-  let meta: RouteMeta | undefined;
+  let meta: RouteMeta;
   routes.forEach((route) => {
     if (route.children) {
       route.children.forEach((child) => {
