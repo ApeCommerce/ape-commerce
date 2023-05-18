@@ -2,20 +2,21 @@
   "name": "api",
   "private": true,
   "scripts": {
-    "dev": "ts-node-dev src/framework/cli",
-    "cli": "ts-node src/framework/cli",
-    "lint": "eslint src --fix",
-    "lint:ci": "eslint src",
-    "test": "rm -rf test.log && jest --verbose",
-    "test:coverage": "rm -rf test.log coverage && jest --verbose --coverage",
-    "test:ci": "jest",
-    "build": "rm -rf dist && tsc --project tsconfig.build.json"
+    "dev": "ts-node-dev framework/cli",
+    "cli": "ts-node framework/cli",
+    "lint": "eslint . --fix",
+    "lint:ci": "eslint .",
+    "test": "jest --verbose --passWithNoTests",
+    "test:coverage": "jest --verbose --coverage --passWithNoTests",
+    "test:ci": "jest --passWithNoTests",
+    "build": "tsc --project tsconfig.build.json"
   },
   "engines": {
     "node": "^16.20"
   },
   "dependencies": {
-    "common": "link:../common/dist"
+    "@apecommerce/ape-framework": "^0.0",
+    "common": "link:../common"
   },
   "devDependencies": {
     "@types/jest": "^29.5",

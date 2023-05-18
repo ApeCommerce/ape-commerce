@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.16",
-    "common": "link:../common/dist",
+    "common": "link:../common",
     "dotenv": "^16.0",
     "pinia": "^2.0",
     "quasar": "^2.11",

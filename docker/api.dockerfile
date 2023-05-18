@@ -20,7 +20,7 @@ COPY --from=build /dist /dist
 COPY --from=build /package.json /
 COPY --from=build /yarn.lock /
 
-RUN yarn --production && yarn add common@file:../common/dist
+RUN yarn --production
 
 ENV NODE_ENV=production
 ENV NODE_PATH=dist

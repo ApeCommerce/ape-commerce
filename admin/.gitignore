@@ -1,6 +1,6 @@
-.env
-.quasar
-dist
-node_modules
-stores/*.d.ts
-yarn.lock
+/.env
+/.quasar
+/dist
+/node_modules
+/stores/*.d.ts
+/yarn.lock

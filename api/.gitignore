@@ -1,5 +1,6 @@
-.env
-coverage
-dist
-node_modules
-yarn.lock
+**/*.d.ts
+**/*.js
+/.env
+/coverage
+/node_modules
+/yarn.lock
