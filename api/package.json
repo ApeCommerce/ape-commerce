@@ -15,14 +15,14 @@
     "node": "^16.20"
   },
   "dependencies": {
-    "@apecommerce/ape-framework": "^0.0"
+    "@apecommerce/ape-framework": "^0.0",
+    "common": "link:../common/dist"
   },
   "devDependencies": {
     "@types/jest": "^29.5",
     "@types/node": "^18.15",
     "@typescript-eslint/eslint-plugin": "^5.57",
     "@typescript-eslint/parser": "^5.57",
-    "common": "link:../common/dist",
     "eslint": "^8.37",
     "eslint-config-airbnb-base": "^15.0",
     "eslint-config-airbnb-typescript": "^17.0",
