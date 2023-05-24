@@ -6,7 +6,7 @@ enum NodeEnvironment {
 }
 
 const nodeEnv = Object.values(NodeEnvironment).find((e) => e === env.nodeEnv);
-if (!nodeEnv) { throw new Error(`Config: invalid node environment "${env.nodeEnv}"`); }
+if (!nodeEnv) throw new Error(`Config: invalid node environment "${env.nodeEnv}"`);
 
 if (nodeEnv === NodeEnvironment.development && !env.apiUrl) {
   throw new Error('Config: api url not provided');

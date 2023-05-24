@@ -12,7 +12,7 @@ export default async (
   const ts = timestamp();
 
   const account = await AccountQuery().where({ email: formatEmail(request.email) }).first();
-  if (!account || !account.passwordHash || !account.isValidated || !account.isEnabled) { return false; }
+  if (!account || !account.passwordHash || !account.isValidated || !account.isEnabled) return false;
 
   const limit = rateLimit(
     account.passwordAttemptWindow,
@@ -20,7 +20,7 @@ export default async (
     RateLimiting.passwordAttempt,
     ts,
   );
-  if (limit.isExceeded) { return false; }
+  if (limit.isExceeded) return false;
 
   if (!await pwd.verifyPassword(request.password, account.passwordHash)) {
     await AccountQuery().where({ accountId: account.accountId }).update({

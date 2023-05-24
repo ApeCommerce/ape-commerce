@@ -21,10 +21,10 @@ export default async (
   const passwordHash = await pwd.hashPassword(request.password);
 
   const language = await LanguageQuery().where({ languageId: request.languageId }).first();
-  if (!language || !language.isEnabled) { return false; }
+  if (!language || !language.isEnabled) return false;
 
   const country = await CountryQuery().where({ countryId: request.countryId }).first();
-  if (!country || !country.isEnabled) { return false; }
+  if (!country || !country.isEnabled) return false;
 
   let account = await AccountQuery().where({ email }).first();
   if (!account) {
@@ -61,7 +61,7 @@ export default async (
     });
     account = newAccount;
   }
-  if (account.isValidated || !account.isEnabled) { return false; }
+  if (account.isValidated || !account.isEnabled) return false;
 
   const limit = rateLimit(
     account.validationWindow,
@@ -69,7 +69,7 @@ export default async (
     RateLimiting.accountValidation,
     ts,
   );
-  if (limit.isExceeded) { return false; }
+  if (limit.isExceeded) return false;
 
   await AccountQuery().where({ accountId: account.accountId }).update({
     passwordHash,

@@ -34,16 +34,16 @@ const list = async () => {
 };
 
 const create = async (email: string, password: string, languageId: string, countryId: string) => {
-  if (!email) { throw new Error('Admin: email not provided'); }
-  if (!password) { throw new Error('Admin: password not provided'); }
-  if (!languageId) { throw new Error('Admin: language id not provided'); }
-  if (!countryId) { throw new Error('Admin: country id not provided'); }
+  if (!email) throw new Error('Admin: email not provided');
+  if (!password) throw new Error('Admin: password not provided');
+  if (!languageId) throw new Error('Admin: language id not provided');
+  if (!countryId) throw new Error('Admin: country id not provided');
 
   const language = await LanguageQuery().where({ languageId }).first();
-  if (!language || !language.isEnabled) { throw new Error(`Admin: incorrect language id "${languageId}"`); }
+  if (!language || !language.isEnabled) throw new Error(`Admin: incorrect language id "${languageId}"`);
 
   const country = await CountryQuery().where({ countryId }).first();
-  if (!country || !country.isEnabled) { throw new Error(`Admin: incorrect country id "${countryId}"`); }
+  if (!country || !country.isEnabled) throw new Error(`Admin: incorrect country id "${countryId}"`);
 
   const account = await AccountQuery().where({ email }).first();
   if (account) {
@@ -88,7 +88,7 @@ const command: Command = {
   arg: 'admin',
   handler: async (args) => {
     const action = parseString(args[0]);
-    if (!action || action === 'help') { writeLn(help); exit(); }
+    if (!action || action === 'help') writeLn(help); exit();
 
     const email = parseString(args[1]);
     const password = parseString(args[2]);

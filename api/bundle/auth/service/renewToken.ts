@@ -11,10 +11,10 @@ export default async (
   const ts = timestamp();
 
   const tokenAuth = jwt.verifyToken(request.token, TokenType.authorization, ts);
-  if (!tokenAuth) { return false; }
+  if (!tokenAuth) return false;
 
   const account = await AccountQuery().where({ accountId: tokenAuth.id }).first();
-  if (!account || !account.isValidated || !account.isEnabled) { return false; }
+  if (!account || !account.isValidated || !account.isEnabled) return false;
 
   await AccountQuery().where({ accountId: account.accountId }).update({ authenticationTs: ts });
 
