@@ -16,7 +16,8 @@
   },
   "dependencies": {
     "@apecommerce/ape-framework": "^0.0",
-    "common": "link:../common/dist"
+    "common": "link:../common/dist",
+    "knex": "^2.4"
   },
   "devDependencies": {
     "@types/jest": "^29.5",
