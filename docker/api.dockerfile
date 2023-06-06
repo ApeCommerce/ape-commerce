@@ -1,4 +1,4 @@
-ARG image=node:16.20
+ARG image=node:16
 
 FROM $image-slim AS build
 
